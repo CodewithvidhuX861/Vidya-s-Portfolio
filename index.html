@@ -1,0 +1,1319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidya | Student Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --yellow: #FFD84D;
+  --navy: #102B50;
+  --white: #FFFFFF;
+  --nude: #F8F1E8;
+  --muted: #68768A;
+  --gold: #C59A00;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--navy);
+  background: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background: var(--yellow);
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 18px #102B5010;
+}
+
+.logo {
+  font: 700 28px 'Playfair Display', serif;
+}
+
+.logo span {
+  background: var(--navy);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: #8B6800;
+}
+
+section {
+  padding: 75px 8%;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: clamp(42px, 6vw, 68px);
+  line-height: 1.12;
+  margin: 22px 0;
+}
+
+h2 {
+  font-size: 38px;
+  margin: 12px 0;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.highlight {
+  color: var(--gold);
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 9px 14px;
+  background: #FFF4C2;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 19px;
+  border-radius: 10px;
+  background: var(--navy);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 8px 5px 0 0;
+  border: 1px solid var(--navy);
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px #102B5020;
+}
+
+.btn.light {
+  background: white;
+  color: var(--navy);
+}
+
+/* HOME */
+
+.hero {
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(white 70%, #FCF8F1);
+}
+
+.hero-art {
+  min-height: 370px;
+  background: var(--nude);
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.circle {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: var(--yellow);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.intro-card {
+  background: white;
+  border-radius: 22px;
+  padding: 28px;
+  width: 78%;
+  max-width: 350px;
+  position: relative;
+  box-shadow: 0 15px 45px #102B501A;
+  transform: rotate(-3deg);
+}
+
+.intro-card h2 {
+  font-size: 32px;
+}
+
+.decor-star {
+  position: absolute;
+  color: var(--gold);
+  font-size: 32px;
+}
+
+.star-one {
+  top: 30px;
+  left: 25px;
+}
+
+.star-two {
+  bottom: 25px;
+  right: 25px;
+}
+
+/* SECTION TITLES */
+
+.section-title {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+/* AVATAR */
+
+.avatar-scene {
+  min-height: 340px;
+  background: var(--nude);
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-halo {
+  width: 230px;
+  height: 230px;
+  background: var(--yellow);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.avatar-person {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.avatar-head {
+  width: 110px;
+  height: 120px;
+  border-radius: 48% 48% 44% 44%;
+  background: #DDA77F;
+  border: 5px solid white;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  font-size: 52px;
+  box-shadow: 0 8px 20px #102B5018;
+}
+
+.avatar-hair {
+  position: absolute;
+  top: -7px;
+  width: 112px;
+  height: 48px;
+  background: #253149;
+  border-radius: 55% 55% 20% 20%;
+  z-index: 3;
+}
+
+.avatar-body {
+  width: 155px;
+  height: 112px;
+  background: var(--navy);
+  border: 5px solid white;
+  border-radius: 65px 65px 20px 20px;
+  margin-top: -4px;
+  display: grid;
+  place-items: center;
+  color: var(--yellow);
+  font: 700 17px 'Playfair Display', serif;
+  box-shadow: 0 12px 25px #102B5020;
+}
+
+.avatar-caption {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 10px;
+  font-weight: 700;
+  box-shadow: 0 5px 15px #102B5010;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ABOUT */
+
+.about-section {
+  background: white;
+}
+
+.about-layout {
+  max-width: 1050px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-copy h2 {
+  font-size: 39px;
+}
+
+.about-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.about-point {
+  background: var(--nude);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.about-point strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.about-point span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* STUDENT ID CARD */
+
+.id-section {
+  background: var(--nude);
+}
+
+.id-layout {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.id-copy h2 {
+  font-size: 40px;
+}
+
+.id-wrap {
+  display: flex;
+  justify-content: center;
+  perspective: 1200px;
+  padding: 18px;
+}
+
+.id-card {
+  width: 290px;
+  height: 465px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .75s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.id-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.id-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 18px 40px #102B5025;
+}
+
+.id-front {
+  background: white;
+  padding: 0 22px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.id-header {
+  width: calc(100% + 44px);
+  height: 112px;
+  flex-shrink: 0;
+  background: var(--navy);
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 700;
+  padding-top: 24px;
+  position: relative;
+  margin-bottom: 43px;
+}
+
+.id-tag {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: var(--yellow);
+  color: var(--navy);
+  font: 700 10px 'Poppins', sans-serif;
+  letter-spacing: .6px;
+  padding: 10px 13px;
+  border: 2px solid white;
+  border-radius: 6px;
+  transform: rotate(3deg);
+  box-shadow: 0 4px 10px #0002;
+  z-index: 5;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  background: #FFF0C5;
+  border: 5px solid white;
+  border-radius: 50%;
+  margin-top: -85px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  font-size: 47px;
+  box-shadow: 0 5px 18px #102B5015;
+}
+
+.id-name {
+  font: 700 29px 'Playfair Display', serif;
+  margin: 12px 0 3px;
+}
+
+.id-role {
+  color: #A27D00;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.divider {
+  width: 48px;
+  height: 3px;
+  background: var(--yellow);
+  margin: 14px auto;
+  border-radius: 5px;
+}
+
+.id-details {
+  width: 100%;
+  text-align: left;
+}
+
+.id-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ECEFF3;
+  font-size: 10px;
+}
+
+.id-row span {
+  color: #8993A2;
+  flex-shrink: 0;
+}
+
+.id-row strong {
+  text-align: right;
+  font-size: 10px;
+  max-width: 65%;
+}
+
+.id-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #8993A2;
+  font-weight: 700;
+}
+
+.id-back {
+  background: var(--navy);
+  color: white;
+  transform: rotateY(180deg);
+  padding: 28px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote-tag {
+  background: var(--yellow);
+  color: var(--navy);
+  padding: 9px 12px;
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.quote-mark {
+  color: var(--yellow);
+  font: 65px Georgia, serif;
+  margin-top: 35px;
+  line-height: 1;
+}
+
+.id-back blockquote {
+  font: 700 23px/1.5 'Playfair Display', serif;
+  color: #FFF3C2;
+  margin: 8px 0;
+}
+
+.id-back p {
+  font-size: 11px;
+  color: #DCE4EF;
+}
+
+.id-back .id-footer {
+  color: var(--yellow);
+}
+
+.flip-hint {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+/* EDUCATION */
+
+.education-section {
+  background: white;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: auto;
+  display: grid;
+  gap: 18px;
+}
+
+.timeline-card {
+  display: grid;
+  grid-template-columns: 65px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 24px;
+  border: 1px solid #ECE8DF;
+  border-radius: 17px;
+  background: white;
+  transition: .2s;
+}
+
+.timeline-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px #102B5010;
+}
+
+.timeline-icon {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #FFF4C2;
+  font-size: 28px;
+}
+
+.timeline-card h3 {
+  font-size: 21px;
+  margin: 0 0 5px;
+}
+
+.timeline-card p {
+  margin: 4px 0;
+}
+
+/* SKILLS */
+
+.skill-layout {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 22px;
+}
+
+.skill-buttons {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.skill-btn {
+  background: white;
+  color: var(--navy);
+  border: 1px solid #E1E5EC;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: left;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.skill-btn.active,
+.skill-btn:hover {
+  background: #FFF4C5;
+  border-color: #E7CA48;
+}
+
+.skill-detail {
+  background: var(--nude);
+  padding: 30px;
+  border-radius: 17px;
+  min-height: 230px;
+}
+
+.skill-detail h3 {
+  font-size: 28px;
+}
+
+/* PROJECTS */
+
+.projects-section {
+  background: #FCF9F3;
+}
+
+.cards {
+  max-width: 1050px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.info-card {
+  padding: 25px;
+  border: 1px solid #E8EAF0;
+  border-radius: 17px;
+  background: white;
+  transition: .2s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px #102B5015;
+}
+
+.project-number {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gold);
+  background: #FFF4C2;
+  padding: 7px 10px;
+  border-radius: 7px;
+}
+
+.info-card h3 {
+  font-size: 21px;
+}
+
+.project-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--navy);
+  background: var(--nude);
+  padding: 7px 9px;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 3px 2px;
+}
+
+/* GOALS */
+
+.goals-section {
+  background: white;
+}
+
+.goals-panel {
+  max-width: 1000px;
+  margin: auto;
+  background: var(--nude);
+  border-radius: 22px;
+  padding: 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.goal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.goal-check {
+  background: var(--yellow);
+  border-radius: 8px;
+  min-width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.goal-item strong {
+  font-size: 13px;
+}
+
+.goal-item p {
+  margin: 4px 0;
+  font-size: 12px;
+}
+
+/* CONTACT */
+
+.contact {
+  background: var(--navy);
+  text-align: center;
+  color: white;
+}
+
+.contact h2 {
+  color: white;
+}
+
+.contact p {
+  color: #DCE4EF;
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact .btn {
+  background: var(--yellow);
+  color: var(--navy);
+  border-color: var(--yellow);
+}
+
+footer {
+  background: #091D36;
+  color: white;
+  padding: 20px 7%;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* MOBILE */
+
+@media(max-width: 760px) {
+  header {
+    padding: 16px 5%;
+  }
+
+  nav {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 9px;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+
+  .hero,
+  .about-layout,
+  .id-layout,
+  .skill-layout,
+  .goals-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    min-height: 300px;
+  }
+
+  .about-copy {
+    text-align: center;
+  }
+
+  .about-points {
+    text-align: left;
+  }
+
+  .id-copy {
+    text-align: center;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .goals-panel {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+}
+
+@media(max-width: 430px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav {
+    justify-content: flex-start;
+  }
+
+  .id-card {
+    width: 280px;
+    height: 455px;
+  }
+
+  .timeline-card {
+    grid-template-columns: 48px 1fr;
+    gap: 13px;
+    padding: 17px;
+  }
+
+  .timeline-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="#home">Vidya<span>.</span></a>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#id-card">MY ID CARD</a>
+    <a href="#education">EDUCATION</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <div>
+    <span class="eyebrow">✦ BCA STUDENT · FUTURE DEVELOPER</span>
+    <h1>Ideas into code.<br>Dreams into <span class="highlight">reality.</span></h1>
+
+    <p>
+      Hi, I'm Vidya! I'm a BCA student who enjoys learning technology,
+      solving problems, and building creative digital experiences.
+      Welcome to my little corner of the digital world.
+    </p>
+
+    <a class="btn" href="#projects">Explore My Work ↗</a>
+    <a class="btn light" href="#about">Get to Know Me</a>
+  </div>
+
+  <div class="hero-art">
+    <div class="circle"></div>
+    <span class="decor-star star-one">✦</span>
+    <span class="decor-star star-two">✧</span>
+
+    <div class="intro-card">
+      <span class="highlight">HELLO, WORLD!</span>
+      <h2>I'm Vidya.</h2>
+      <p>Student by day.<br>Dreamer, learner and creator always.</p>
+      <div class="divider"></div>
+      <p><strong>LEARN · BUILD · GROW</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT ME WITH AVATAR -->
+<section class="about-section" id="about">
+  <div class="section-title">
+    <span class="eyebrow">✦ THE PERSON BEHIND THE CODE</span>
+    <h2>A Little About Me</h2>
+    <p>Every developer has a story. Here's a little part of mine.</p>
+  </div>
+
+  <div class="about-layout">
+    <div class="avatar-scene">
+      <div class="avatar-halo"></div>
+
+      <div class="avatar-person" aria-label="Cute cartoon student avatar">
+        <div class="avatar-head">
+          <div class="avatar-hair"></div>
+          <span>😊</span>
+        </div>
+        <div class="avatar-body">VIDYA ✦</div>
+      </div>
+
+      <div class="avatar-caption">✦ Learning something new every day</div>
+    </div>
+
+    <div class="about-copy">
+      <span class="eyebrow">HELLO, I'M VIDYA</span>
+      <h2>Curious mind.<br><span class="highlight">Creative heart.</span></h2>
+
+      <p>
+        I'm currently pursuing a Bachelor of Computer Applications (BCA).
+        I enjoy exploring how websites and applications work, learning
+        new technologies, and turning ideas into practical projects.
+      </p>
+
+      <p>
+        My learning journey includes frontend development, Python,
+        backend development, APIs, and databases. I believe that
+        mistakes are part of learning and every small project helps
+        me improve.
+      </p>
+
+      <p>
+        My goal is to strengthen my technical knowledge, build useful
+        applications, and grow into a confident software developer.
+      </p>
+
+      <div class="about-points">
+        <div class="about-point">
+          <strong>🎓 Education</strong>
+          <span>BCA Student</span>
+        </div>
+        <div class="about-point">
+          <strong>💻 Interests</strong>
+          <span>Web & Software Development</span>
+        </div>
+        <div class="about-point">
+          <strong>🌱 Mindset</strong>
+          <span>Always Learning</span>
+        </div>
+        <div class="about-point">
+          <strong>🚀 Goal</strong>
+          <span>Build Meaningful Projects</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT ID CARD -->
+<section class="id-section" id="id-card">
+  <div class="section-title">
+    <span class="eyebrow">✦ A LITTLE ABOUT ME</span>
+    <h2>My Digital Student ID</h2>
+    <p>A personalised student card with a bright yellow tag. Tap it to discover the quote on the back.</p>
+  </div>
+
+  <div class="id-layout">
+    <div class="id-copy">
+      <span class="eyebrow">MY LITTLE IDENTITY</span>
+      <h2>Small steps.<br><span class="highlight">Big dreams.</span></h2>
+
+      <p>
+        This digital ID represents my journey as a student, my interest
+        in technology, and my excitement to keep learning.
+      </p>
+
+      <p>
+        The front introduces me, while the back carries a reminder
+        to stay patient, keep learning, and believe in progress.
+      </p>
+
+      <p><strong>✦ Tip:</strong> Click the card to flip it. Click again to return to the front.</p>
+
+      <a class="btn" href="#education">Explore My Education ↗</a>
+    </div>
+
+    <div>
+      <div class="id-wrap">
+        <div class="id-card" id="idCard" role="button" tabindex="0"
+             aria-label="Flip student ID card" aria-pressed="false">
+
+          <div class="id-face id-front">
+            <div class="id-header">
+              VIDYA · PORTFOLIO
+              <div class="id-tag">STUDENT ID ✦</div>
+            </div>
+
+            <div class="avatar">👩🏻‍💻</div>
+            <div class="id-name">Vidya</div>
+            <div class="id-role">BCA STUDENT</div>
+            <div class="divider"></div>
+
+            <div class="id-details">
+              <div class="id-row">
+                <span>Course</span>
+                <strong>Bachelor of Computer Applications</strong>
+              </div>
+              <div class="id-row">
+                <span>Interest</span>
+                <strong>Web Development</strong>
+              </div>
+              <div class="id-row">
+                <span>Mindset</span>
+                <strong>Learn · Create · Improve</strong>
+              </div>
+              <div class="id-row">
+                <span>Mission</span>
+                <strong>Build & Grow</strong>
+              </div>
+            </div>
+
+            <div class="id-footer">DREAM IT. BUILD IT.</div>
+          </div>
+
+          <div class="id-face id-back">
+            <div class="quote-tag">A NOTE TO MY FUTURE SELF</div>
+            <div class="quote-mark">“</div>
+            <blockquote>Be brave enough to start, and patient enough to grow.</blockquote>
+            <div class="divider"></div>
+            <p>
+              Every skill begins with a first attempt. Every dream grows
+              with consistency. Keep learning, Vidya — your story is
+              still unfolding.
+            </p>
+            <div class="id-footer">LEARN · BUILD · SHINE</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="flip-hint">↻ CLICK THE CARD TO TURN IT AROUND</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="education-section" id="education">
+  <div class="section-title">
+    <span class="eyebrow">✦ MY LEARNING JOURNEY</span>
+    <h2>Education & Growth</h2>
+    <p>My education helps me build the foundation for a future in technology.</p>
+  </div>
+
+  <div class="timeline">
+    <article class="timeline-card">
+      <div class="timeline-icon">🎓</div>
+      <div>
+        <h3>Bachelor of Computer Applications</h3>
+        <p><strong>Undergraduate Studies · BCA</strong></p>
+        <p>
+          Learning programming, computer applications, software concepts,
+          databases, web technologies, and problem-solving.
+        </p>
+      </div>
+    </article>
+
+    <article class="timeline-card">
+      <div class="timeline-icon">💻</div>
+      <div>
+        <h3>Technical Learning</h3>
+        <p><strong>Practice & Projects</strong></p>
+        <p>
+          Exploring HTML, CSS, JavaScript, Python, Flask, APIs,
+          databases, and the tools used to develop applications.
+        </p>
+      </div>
+    </article>
+
+    <article class="timeline-card">
+      <div class="timeline-icon">🌱</div>
+      <div>
+        <h3>Continuous Improvement</h3>
+        <p><strong>Learning by Doing</strong></p>
+        <p>
+          Improving my understanding through practice, debugging,
+          experimenting with new ideas, and building projects step by step.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-title">
+    <span class="eyebrow">✦ WHAT I'M LEARNING</span>
+    <h2>Skills & Curiosity</h2>
+    <p>Select a skill to explore what I'm learning and practising.</p>
+  </div>
+
+  <div class="skill-layout">
+    <div class="skill-buttons">
+      <button class="skill-btn active" data-title="HTML & CSS"
+        data-text="I use HTML to structure web pages and CSS to style them, create layouts, and make websites responsive on different screens.">
+        🌐 HTML & CSS
+      </button>
+
+      <button class="skill-btn" data-title="JavaScript"
+        data-text="I'm learning JavaScript to make websites interactive, respond to user actions, update content, and add useful functionality.">
+        ✨ JavaScript
+      </button>
+
+      <button class="skill-btn" data-title="Python & Flask"
+        data-text="I practise Python programming and Flask to understand backend routes, server-side logic, and how web APIs work.">
+        🐍 Python & Flask
+      </button>
+
+      <button class="skill-btn" data-title="Databases"
+        data-text="I'm learning how applications store, organise, retrieve, and manage information using database concepts.">
+        🗄️ Databases
+      </button>
+
+      <button class="skill-btn" data-title="Development Tools"
+        data-text="I use VS Code and browser tools to write code, test changes, identify errors, and improve my development workflow.">
+        🛠️ Development Tools
+      </button>
+
+      <button class="skill-btn" data-title="Problem Solving"
+        data-text="I work on understanding a problem, breaking it into smaller steps, trying solutions, and learning from mistakes.">
+        🧩 Problem Solving
+      </button>
+    </div>
+
+    <div class="skill-detail" aria-live="polite">
+      <span style="font-size:34px">✦</span>
+      <h3 id="skillTitle">HTML & CSS</h3>
+      <p id="skillText">
+        I use HTML to structure web pages and CSS to style them,
+        create layouts, and make websites responsive on different screens.
+      </p>
+      <div class="divider" style="margin-left:0"></div>
+      <p><strong>Learning mindset:</strong> Practise, experiment, and improve.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+  <div class="section-title">
+    <span class="eyebrow">✦ THINGS I'M BUILDING</span>
+    <h2>Projects & Practice</h2>
+    <p>Each project helps me connect classroom learning with practical problem-solving.</p>
+  </div>
+
+  <div class="cards">
+    <article class="info-card">
+      <span class="project-number">PROJECT 01</span>
+      <h3>🪪 Visitor Entry Management</h3>
+      <p>
+        A project concept for recording visitor information and organising
+        visitor details, visitor types, profiles, and visit schedules.
+      </p>
+      <span class="project-label">Python</span>
+      <span class="project-label">Flask API</span>
+      <span class="project-label">Database</span>
+    </article>
+
+    <article class="info-card">
+      <span class="project-number">PROJECT 02</span>
+      <h3>💻 Personal Portfolio</h3>
+      <p>
+        A responsive personal website showcasing my introduction,
+        student ID card, education, technical interests, and projects.
+      </p>
+      <span class="project-label">HTML</span>
+      <span class="project-label">CSS</span>
+      <span class="project-label">JavaScript</span>
+    </article>
+
+    <article class="info-card">
+      <span class="project-number">PROJECT 03</span>
+      <h3>⚙️ Web Development Practice</h3>
+      <p>
+        Small practice exercises to improve my understanding of frontend
+        interfaces, backend concepts, APIs, and database operations.
+      </p>
+      <span class="project-label">Frontend</span>
+      <span class="project-label">Backend</span>
+      <span class="project-label">Learning</span>
+    </article>
+  </div>
+</section>
+
+<!-- GOALS -->
+<section class="goals-section">
+  <div class="section-title">
+    <span class="eyebrow">✦ WHAT COMES NEXT</span>
+    <h2>My Goals & Aspirations</h2>
+    <p>Every small step brings me closer to the developer I want to become.</p>
+  </div>
+
+  <div class="goals-panel">
+    <div>
+      <h2>Dream big.<br><span class="highlight">Keep building.</span></h2>
+      <p>
+        I'm focused on developing strong fundamentals, understanding
+        real-world applications, and becoming more confident with technology.
+      </p>
+    </div>
+
+    <div>
+      <div class="goal-item">
+        <div class="goal-check">✓</div>
+        <div>
+          <strong>Strengthen Fundamentals</strong>
+          <p>Practise programming and understand core concepts.</p>
+        </div>
+      </div>
+
+      <div class="goal-item">
+        <div class="goal-check">✦</div>
+        <div>
+          <strong>Build Practical Projects</strong>
+          <p>Turn ideas into useful, working applications.</p>
+        </div>
+      </div>
+
+      <div class="goal-item">
+        <div class="goal-check">↗</div>
+        <div>
+          <strong>Grow Professionally</strong>
+          <p>Keep learning and prepare for future opportunities in IT.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <span class="eyebrow">✦ LET'S CONNECT</span>
+  <h2>Have an idea? Let's talk.</h2>
+  <p>
+    Thank you for visiting my portfolio! I'm always interested in
+    learning, building, and exploring new ideas.
+  </p>
+
+  <a class="btn" href="vidya@gamil.com">Email Me ↗</a>
+
+  <a class="btn"
+     href="https://github.com/CodewithvidhuX861"
+     target="_blank"
+     rel="noopener noreferrer">Visit My GitHub ↗</a>
+
+  <a class="btn" href="#home">Back to Top ↑</a>
+</section>
+
+</main>
+
+<footer>
+  <span>© <span id="year"></span> Vidya · Made with curiosity ✦</span>
+  <span>Learn a little. Build a little. Grow every day.</span>
+</footer>
+
+<script>
+const idCard = document.getElementById("idCard");
+
+function flipCard() {
+  idCard.classList.toggle("flipped");
+  idCard.setAttribute(
+    "aria-pressed",
+    idCard.classList.contains("flipped") ? "true" : "false"
+  );
+}
+
+idCard.addEventListener("click", flipCard);
+
+idCard.addEventListener("keydown", function(event) {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    flipCard();
+  }
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+const skillButtons = document.querySelectorAll(".skill-btn");
+
+skillButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    skillButtons.forEach(function(item) {
+      item.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    document.getElementById("skillTitle").textContent =
+      button.dataset.title;
+
+    document.getElementById("skillText").textContent =
+      button.dataset.text;
+  });
+});
+</script>
+
+</body>
+</html>
